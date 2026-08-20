@@ -1,0 +1,44 @@
+.pip-loader-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5000;
+    /* background-color: transparent; */
+    position: absolute;
+    background-color: #0C161780;
+    /* opacity: 50%; */
+}
+
+.pip-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 168px;
+    padding: 16px;
+    gap: 12px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.pip-loader-icon {
+    height: 56px;
+    width: 56px;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 6px;
+    background-color: #CCCCCC99;
+    border-radius: 5px;
+}
+
+.progress-level {
+    height: 6px;
+    border-radius: 5px;
+    background-color: #10B981;
+}

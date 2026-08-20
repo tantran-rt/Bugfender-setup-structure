@@ -1,0 +1,70 @@
+.testCollectionHeaderWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.routeHome {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  padding: 16px;
+  background-color: #009cf9;
+}
+
+.wrapAppHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  padding: 0px 16px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #4e555d;
+  /* padding: 4px; */
+  height: 100%;
+}
+.iconContainer:hover {
+  color: #0c1617;
+}
+
+@media (min-width: 700px) {
+  .cancelBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 135px;
+    padding: 16px;
+    background-color: #fee2e2;
+    border-radius: 6px;
+    color: #f87171;
+  }
+}
+
+.cancelBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  padding: 16px 8px;
+  background-color: #fee2e2;
+  border-radius: 6px;
+  color: #f87171;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.cancelBtn:hover {
+  background-color: #fecaca; /* Slightly deeper red */
+  color: #dc2626; /* Darker red text */
+}

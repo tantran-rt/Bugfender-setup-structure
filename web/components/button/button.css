@@ -1,0 +1,364 @@
+.blue,
+.white {
+  font-size: 20px;
+  color: #ffffff;
+  width: 100%;
+  /* height: 65px; */
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #009cf9;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.blue:not(:disabled):hover {
+  background: #24527b;
+}
+
+.white {
+  color: #009cf9;
+  background: #ffffff;
+  box-shadow: 10px 10px 50px 0px #0000000d;
+}
+
+.white:hover {
+  background: #adadad;
+}
+
+.btn-review {
+  background-color: rgba(0, 156, 249, 1) !important;
+  width: 100% !important;
+  height: 3.5em !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  border: none;
+  color: #ffffff;
+  font-size: 0.7em !important;
+  cursor: pointer;
+}
+
+.accepted-btn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: #009cf9;
+  border: 1px solid #009cf9;
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #c6ced6;
+}
+
+.accepted-btn:hover {
+  background-color: #007dc7;
+}
+
+.decline-btn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #777777;
+  cursor: pointer;
+  border: 1px solid var(--Dark-Grey, #777777);
+}
+
+.decline-btn:hover {
+  background-color: #e5f5ff;
+}
+
+.logout-btn {
+  width: 93px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  color: #ff6566;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffd5d380;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  position: absolute;
+  top: 24px;
+  right: 0;
+}
+
+.logout-btn-dextop-menu {
+  width: 95%;
+  padding: 18px;
+  border-radius: 8px;
+  border: none;
+  color: #ff6566;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fef2f2;
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  margin-bottom: 32px;
+  margin-top: auto;
+}
+
+.logout-btn-dextop-menu:hover {
+  background-color: #fee2e2;
+}
+
+.faq-btn {
+  border: none;
+  background: none;
+  /* color: #009CF9; */
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-left {
+  display: flex;
+  align-items: flex-start;
+  /* padding: 0 20px; */
+  padding: 0;
+  /* width: 40%; */
+}
+
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 0 20px; */
+  padding: 0;
+  /* width: 40%; */
+  /* width: 30%; */
+}
+
+.td-left,
+.td-right,
+.db-blue,
+.db-white {
+  width: 100%;
+  max-width: 85px;
+  height: 35px;
+  border: none;
+}
+
+.td-left {
+  border-radius: 8px;
+  background: #e5faff;
+  color: #4e555d;
+}
+
+.db-blue {
+  background: #009cf9;
+  color: #ffffff;
+}
+
+.db-white {
+  background: #ffffff;
+  border: 1px solid #009cf9;
+  color: #009cf9;
+}
+
+.td-right {
+  border-radius: 8px;
+  background: #009cf9;
+  color: #ffffff;
+}
+
+.exit-btn,
+.exit-btn-trans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 80%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #009cf9;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.exit-btn {
+  background: #009cf9;
+  color: #ffffff;
+}
+
+.exit-btn-trans {
+  background: none;
+  color: #24527b;
+}
+
+.cap-btn,
+.man-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 183px;
+  height: 44px;
+  border: 1px solid #c6ced6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.cap-btn {
+  background: #009cf9;
+  color: #ffffff;
+}
+
+.man-btn {
+  background: white;
+  color: #24527b;
+}
+
+@media (max-width: 768px) {
+  .exit-btn,
+  .exit-btn-trans {
+    padding: 12px 3px;
+    font-size: 12px;
+  }
+}
+
+.prompt-cancel-btn {
+  background: #ffffff;
+  color: #4e555d;
+  border-radius: 12px;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.prompt-cancel-btn:hover {
+  background: #adadad;
+  color: #006bb3;
+}
+
+@media screen and (max-width: 768px) {
+  .prompt-cancel-btn {
+    width: 100%;
+    height: auto;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.prompt-yes-btn {
+  background: #009cf9;
+  color: #ffffff;
+  border: 1px solid #009cf9;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: normal !important;
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .accepted-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #009cf9;
+    border: 1px solid #009cf9;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #c6ced6;
+  }
+
+  .decline-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #777777;
+    cursor: pointer;
+    border: 1px solid var(--Dark-Grey, #777777);
+  }
+
+  .prompt-yes-btn {
+    width: 100%;
+    height: auto;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.prompt-yes-btn:hover {
+  background: #24527b;
+}
+
+.cap-btn {
+  background-color: #24527b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cap-btn:hover {
+  background-color: #1c3f5e;
+}
+
+.man-btn {
+  background-color: white;
+  color: #24527b;
+  border: 1px solid #24527b;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.man-btn:hover {
+  background-color: #f0f0f0;
+  color: #1c3f5e;
+  border-color: #1c3f5e;
+}
+
+.td-right {
+  background-color: #009cf9;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.td-right:hover {
+  background-color: #007cc9;
+}
+
+.exit-btn:hover {
+  background: #007acc; /* Slightly darker blue */
+  border-color: #007acc;
+  color: #ffffff;
+}
+
+.exit-btn-trans:hover {
+  background: #e6f2fb; /* Light blue background */
+  color: #007acc; /* Darker text color on hover */
+  border-color: #007acc;
+}

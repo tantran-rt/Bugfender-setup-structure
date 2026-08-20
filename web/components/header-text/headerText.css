@@ -1,0 +1,27 @@
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px 0 20px 0;
+  width: 100%;
+}
+
+.header-text .title {
+  /* font-size: 32px; */
+  font-size: 24px;
+  /* font-weight: "500"; */
+  font-weight: "400";
+  margin-bottom: 8px;
+  /* color: #24527b; */
+  color: #000000;
+  line-height: 29.05px;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.header-text .text {
+  text-align: start;
+  font-size: 16px;
+  color: #4D5B6B;
+}

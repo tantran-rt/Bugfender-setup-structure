@@ -1,0 +1,8 @@
+.textarea-wrap {
+    width: 100% !important;
+}
+
+.textarea-wrap textarea {
+    box-sizing: border-box !important;
+    padding: 1rem;
+}

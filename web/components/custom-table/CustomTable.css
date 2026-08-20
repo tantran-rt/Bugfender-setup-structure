@@ -1,0 +1,46 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.custom-table th {
+    background-color: #2f3c4f;
+    color: white;
+    text-align: left;
+    padding: 12px 16px;
+}
+
+.custom-table td {
+    padding: 24px 16px;
+    color: #333;
+}
+
+.custom-table tr.highlight {
+    background-color: #f4f7fa;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.successful {
+    background-color: #b2fab4;
+    color: #006400;
+}
+
+.failed {
+    background-color: #ffb3b3;
+    color: #b30000;
+}

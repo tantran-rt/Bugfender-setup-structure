@@ -1,0 +1,71 @@
+.react-select__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    font-size: 16px;
+    color: #b0b0b0;
+    background-color: #fafafa;
+    border: none;
+    border-bottom: 2px solid rgba(234,
+            238,
+            245,
+            1);
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: none;
+}
+
+
+.css-85gty5-control{
+    box-shadow: none;
+}
+.css-1114x6r-control {
+    box-shadow: none;
+}
+
+.react-select__control--is-focused {
+    outline: none;
+    box-shadow: none;
+    background-color: #fafafa;
+    box-shadow: none;
+    border-bottom: 2px solid rgb(0, 156, 249);
+}
+
+.react-select__control--is-focused .react-select__control {
+    box-shadow: none;
+    border-bottom: 1px solid grey;
+}
+
+.react-select__placeholder,
+.react-select__single-value {
+    color: #b0b0b0;
+}
+
+.react-select__menu {
+    border-radius: 0 0 5px 5px;
+    border: 1px solid grey;
+    border-top: none;
+    margin-top: -1px;
+    box-shadow: none;
+}
+
+.react-select__menu-list {
+    padding: 0;
+}
+
+.react-select__option {
+    padding: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.react-select__option--is-focused {
+    background-color: #f0f0f0;
+}
+
+.react-select__option--is-selected {
+    background-color: #e0e0e0;
+    color: #333;
+}

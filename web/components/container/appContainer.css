@@ -1,0 +1,62 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh; /* Use viewport height for mobile responsiveness */
+  padding: 0 4px;
+  top: 0px;
+  position: absolute;
+}
+
+.appContainerHead {
+  width: 100%;
+  background-color: #ffffff;
+  flex: 0 0 auto; /* Fixes the header height */
+}
+
+.appContainerBody {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; /* <--- this fixes vertical stacking */
+}
+
+.wrapContainer {
+  width: 100%;
+  border-radius: 16px;
+  background-color: #f4f7f8;
+  /* height: 100%; */
+  flex-grow: 1;
+  margin-top: 0px;
+}
+
+.appContainerFooter {
+  width: 100%;
+  background-color: #ffffff;
+  flex: 0 0 auto; /* Fixes the footer height */
+}
+
+@media screen and (min-width: 700px) {
+  .appContainer {
+    padding: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  .appContainerBody {
+    /* height: 80%; */
+    padding: 0px 20px;
+  }
+
+  .wrapContainer {
+    width: 100%;
+    border-radius: 16px;
+    background-color: #f4f7f8;
+    /* height: 100%; */
+    flex-grow: 1;
+    margin-top: 20px;
+  }
+}

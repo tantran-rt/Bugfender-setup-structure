@@ -1,0 +1,100 @@
+.pip-step-loader-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 5000;
+    background-color: #0C161780;
+    position: absolute;
+}
+
+.pip-step-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #FFFFFF;
+    width: 386px;
+    height: 308px;
+    padding: 24px;
+    gap: 36px;
+    border-radius: 24px;
+    text-align: left;
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 40px; /* Adjust height to fit progress bar and step indicators */
+}
+
+.progress-bar {
+    width: 90%;
+    height: 8px;
+    background-color: #F6F7F8;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress-level {
+    height: 100%;
+    background-color: #10B981;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.step-indicators {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    /* top: -22px; Adjust position of the step indicators */
+    left: 5%; /* Align with the progress bar */
+    right: 5%;
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    background-color: #AAB5C2; 
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    box-shadow: #E3E6EB 0px 3px 8px;
+
+}
+
+.progress-step.active {
+    background-color: #10B981;
+    box-shadow: #A7F3D0 0px 3px 8px;
+    color: white;
+}
+
+.pip-step-loader-btn {
+  width: 338px;
+  height: 48px;
+  padding: 16px;
+  gap: 8px;
+  border-radius: 12px;
+  background: #10B981;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pip-step-loader-btn:hover {
+  background: #0e9f6e; 
+  transform: translateY(-2px); 
+}

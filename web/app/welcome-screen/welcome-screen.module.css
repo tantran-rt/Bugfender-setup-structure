@@ -1,0 +1,91 @@
+.welcomeScreenContaine {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  height: 90%;
+  width: 100%;
+  overflow: auto;
+}
+
+.welcomeScreenHeader {
+  font-weight: 700px;
+  font-size: 28px;
+  line-height: 34px;
+  color: #0c1617;
+}
+
+.welcomeScreenText {
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #4e555d;
+}
+
+.welcomeScreenCheckboxNextBtnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 44px;
+  font-size: 14px !important;
+  margin-top: 16px;
+}
+
+.welcomeScreenNextBtn {
+  width: 86px;
+  height: 44px;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: #009cf9;
+  color: #ffffff;
+  border: none;
+}
+.welcomeScreenPrLogo {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .welcomeScreenContaine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .welcomeScreenDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    position: relative;
+  }
+
+  .welcomeScreenCheckboxNextBtnContainer {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .welcomeScreenHeader {
+    font-size: 34px;
+  }
+
+  .welcomeScreenText {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .welcomeScreenNextBtn {
+    width: 114px;
+  }
+  .welcomeScreenPrLogo {
+    display: block;
+    /* position: absolute; */
+    /* top: 36px; */
+    /* left: 24px; */
+    width: fit-content;
+    /* object-fit: cover; */
+    height: 80px;
+  }
+}
