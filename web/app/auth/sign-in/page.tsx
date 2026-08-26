@@ -272,8 +272,13 @@ function LoginForm() {
   };
 
   useEffect(() => {
-    if (loginRedirect) {
-      // console.log(loginData, "loginData - 2");
+    if (!loginRedirect) {
+      return;
+    }
+
+    let cancelled = false;
+
+    (async () => {
       dispatch(
         login({
           token: true,
@@ -285,12 +290,18 @@ function LoginForm() {
       appDispatch(fetchS3Image(loginData?.proof_id_value));
       if (loginData?.participant_id) {
         Sentry.setUser({ id: loginData.participant_id });
-        await setBugfenderDeviceId(participant_id);
+        await setBugfenderDeviceId(loginData.participant_id);
       }
-      landingCookie !== undefined && landingCookie === "true"
-        ? router.push("/")
-        : router.push("/home");
-    }
+      if (!cancelled) {
+        landingCookie !== undefined && landingCookie === "true"
+          ? router.push("/")
+          : router.push("/home");
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [appDispatch, dispatch, landingCookie, loginData, loginRedirect, router]);
 
   const checkPrivateMode = useCallback(async () => {
