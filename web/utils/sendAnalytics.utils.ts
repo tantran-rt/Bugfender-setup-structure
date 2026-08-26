@@ -41,10 +41,13 @@ export const initializeBugfender = () => {
 };
 
 /**
- * Sets Bugfender device key "id" at login time.
- * Authoritative path — do not rely on web-vitals sendAnalytics for this.
+ * Call after login AND on reload when participant_id is already known.
+ * Order: init → setDeviceKey → forceSendOnce → readiness log → forceSendOnce.
+ * Forces session creation so queued logs can upload.
  */
-export const setBugfenderDeviceId = async (participant_id: string | number) => {
+export const ensureBugfenderReady = async (
+  participant_id: string | number
+): Promise<void> => {
   if (
     typeof window === "undefined" ||
     participant_id === undefined ||
@@ -58,6 +61,15 @@ export const setBugfenderDeviceId = async (participant_id: string | number) => {
   const NextBugfender = await initializeBugfender();
   NextBugfender.setDeviceKey("id", String(participant_id));
   window.idSetonBugFender = true;
+  NextBugfender.forceSendOnce();
+};
+
+/**
+ * Sets Bugfender device key "id" at login time and flushes session.
+ * Authoritative path — do not rely on web-vitals sendAnalytics for this.
+ */
+export const setBugfenderDeviceId = async (participant_id: string | number) => {
+  return ensureBugfenderReady(participant_id);
 };
 
 export const sendAnalytics = async ({

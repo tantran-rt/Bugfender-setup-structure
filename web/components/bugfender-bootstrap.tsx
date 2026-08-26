@@ -1,12 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
-import { initializeBugfender } from "@/utils/sendAnalytics.utils";
+import { useSelector } from "react-redux";
+import { authToken } from "@/redux/slices/auth";
+import {
+  ensureBugfenderReady,
+  initializeBugfender
+} from "@/utils/sendAnalytics.utils";
 
 const startBugfender = async () => {
-  await initializeBugfender().catch((error) => {
+  try {
+    await initializeBugfender();
+  } catch (error) {
     console.error("Bugfender init failed", error);
-  });
+  }
 };
 
 // Start as soon as this client module evaluates, before React hydrates.
@@ -15,12 +22,30 @@ if (typeof window !== "undefined") {
 }
 
 /**
- * Boots Bugfender at app root, before routing and user interaction.
+ * Boots Bugfender at app root, and flushes session when participant_id is known
+ * (login reload / already authenticated).
  */
 export default function BugfenderBootstrap() {
+  const { participant_id } = useSelector(authToken);
+
   useEffect(() => {
-    startBugfender();
-  }, []);
+    let cancelled = false;
+
+    (async () => {
+      try {
+        await initializeBugfender();
+        if (!cancelled && participant_id) {
+          await ensureBugfenderReady(participant_id);
+        }
+      } catch (error) {
+        console.error("Bugfender init failed", error);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [participant_id]);
 
   return null;
 }

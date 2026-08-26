@@ -5,6 +5,7 @@ import { store } from "@/redux/store";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Toastify from "@/components/toastify";
+import BugfenderBootstrap from "@/components/bugfender-bootstrap";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { WebVitals } from "@/components/web-vitals";
@@ -12,7 +13,7 @@ import { WebVitals } from "@/components/web-vitals";
 const environment = process.env.NODE_ENV;
 
 export default function LayoutProvider({
-  children,
+  children
 }: Readonly<{ children: React.ReactNode }>) {
   const queryClient = new QueryClient();
   const pathname = usePathname();
@@ -33,6 +34,7 @@ export default function LayoutProvider({
       {/* @ts-ignore */}
       <WebVitals participant_id={participant_id_memoized as string} />
       <Provider store={store}>
+        <BugfenderBootstrap />
         <QueryClientProvider client={queryClient}>
           <>{children}</>
           {environment === "development" ? (

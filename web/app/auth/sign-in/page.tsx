@@ -240,7 +240,7 @@ function LoginForm() {
             appDispatch(fetchS3Image(userPhoto));
           }
           Sentry.setUser({ id: participant_id });
-          setBugfenderDeviceId(participant_id);
+          await setBugfenderDeviceId(participant_id);
 
           landingCookie !== undefined && landingCookie === "true"
             ? router.push("/")
@@ -285,7 +285,7 @@ function LoginForm() {
       appDispatch(fetchS3Image(loginData?.proof_id_value));
       if (loginData?.participant_id) {
         Sentry.setUser({ id: loginData.participant_id });
-        setBugfenderDeviceId(loginData.participant_id);
+        await setBugfenderDeviceId(participant_id);
       }
       landingCookie !== undefined && landingCookie === "true"
         ? router.push("/")

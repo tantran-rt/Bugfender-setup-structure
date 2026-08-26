@@ -7,26 +7,24 @@ import { useMemo } from "react";
 import { store } from "@/redux/store";
 import { SupportWrapper } from "@/components/SupportWrapper";
 import ScannerProviderWrapper from "@/components/scanditize/ScannerProviderWrapper";
-import BugfenderBootstrap from "@/components/bugfender-bootstrap";
 
 const inter = localFont({
   src: "../public/fonts/Inter-VariableFont_opsz,wght.ttf",
-  variable: "--font-inter",
+  variable: "--font-inter"
 });
 
 export const metadata: Metadata = {
   title: "Proof",
   description:
-    "PROOF is the world's first remote, fully observed drug & alcohol testing solution that is Effortless, Accurate, Secure, and Defensible.",
+    "PROOF is the world's first remote, fully observed drug & alcohol testing solution that is Effortless, Accurate, Secure, and Defensible."
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <BugfenderBootstrap />
         <LayoutProvider>
           <ScannerProviderWrapper>
             <Auth>

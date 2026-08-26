@@ -9,7 +9,6 @@ const NextBugfender = {
       baseURL: "https://dashboard.bugfender.com/",
       logUIEvents: false
     });
-    Bugfender.forceSendOnce();
   },
 
   setDeviceKey: (key: string, value: string) => {
@@ -38,6 +37,10 @@ const NextBugfender = {
 
   sendCrash: (key: string, value: string) => {
     Bugfender.sendCrash(key, value);
+  },
+
+  forceSendOnce: () => {
+    Bugfender.forceSendOnce();
   }
 };
 
