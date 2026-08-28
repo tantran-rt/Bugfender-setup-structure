@@ -62,6 +62,8 @@ export const ensureBugfenderReady = async (
   NextBugfender.setDeviceKey("id", String(participant_id));
   window.idSetonBugFender = true;
   NextBugfender.forceSendOnce();
+  NextBugfender.log("Bugfender ready", `id=${participant_id}`);
+  NextBugfender.forceSendOnce();
 };
 
 /**
@@ -126,5 +128,5 @@ export const sendAnalytics = async ({
 
 export const sendLogs = async (...messages: string[]) => {
   const NextBugfender = await initializeBugfender();
-  NextBugfender.log(`${messages}`);
+  NextBugfender.log(...messages);
 };
