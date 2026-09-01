@@ -10,6 +10,39 @@ type NextBugfender = (typeof import("./bugFender.utils"))["default"];
 
 let initPromise: Promise<NextBugfender> | null = null;
 
+const BUGFENDER_SESSION_STARTED_AT_KEY = "proof_bugfender_session_started_at";
+const BUGFENDER_SESSION_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+
+/**
+ * Bugfender stores the current session in sessionStorage. Rotate legacy or
+ * long-lived sessions before init so the SDK does not reuse a server session
+ * that has already expired. Keep bf_device_udid intact to preserve the device.
+ */
+const rotateExpiredBugfenderSession = () => {
+  try {
+    const now = Date.now();
+    const startedAt = Number(
+      window.sessionStorage.getItem(BUGFENDER_SESSION_STARTED_AT_KEY)
+    );
+    const isCurrent =
+      Number.isFinite(startedAt) &&
+      startedAt > 0 &&
+      startedAt <= now &&
+      now - startedAt < BUGFENDER_SESSION_MAX_AGE_MS;
+
+    if (!isCurrent) {
+      window.sessionStorage.removeItem("bf_session_uuid");
+      window.sessionStorage.removeItem("bf_session_udid");
+      window.sessionStorage.setItem(
+        BUGFENDER_SESSION_STARTED_AT_KEY,
+        String(now)
+      );
+    }
+  } catch (error) {
+    console.warn("Unable to rotate the Bugfender session", error);
+  }
+};
+
 /**
  * Loads and initializes Bugfender once. Concurrent callers share the same
  * in-flight Promise. The initialized flag is set only after init resolves so
@@ -21,11 +54,13 @@ export const initializeBugfender = () => {
   }
 
   initPromise = (async () => {
-    const NextBugfender = (await import("./bugFender.utils")).default;
-
     if (typeof window === "undefined") {
+      const NextBugfender = (await import("./bugFender.utils")).default;
       return NextBugfender;
     }
+
+    rotateExpiredBugfenderSession();
+    const NextBugfender = (await import("./bugFender.utils")).default;
 
     if (!window.BugfenderInitialized) {
       await NextBugfender.init();
